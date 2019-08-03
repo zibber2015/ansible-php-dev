@@ -1,0 +1,18 @@
+---
+- name: install mysql
+  hosts: 
+    - local
+  roles:
+    - role: geerlingguy.mysql
+      become: yes
+  vars:
+    mysql_packages:
+      - mysql-client
+      - mysql-server
+    mysql_root_password: V519mjJHi1vIVwuf
+    mysql_root_password_update: yes
+    encoding: utf8mb4
+    collation: utf8mb4_unicode_ci
+  tasks:
+  - name: restart mysql
+    command: service mysql restart

@@ -1,0 +1,20 @@
+---
+- name: install openresty
+  hosts: 
+    - local
+  roles:
+    - Lusitaniae.ansible-role-openresty
+  
+  tasks:
+    - name: nginx conf
+      copy: 
+        src: "{{ item }}"
+        dest: "/usr/local/openresty/nginx/conf/"
+      with_items:
+        - "{{playbook_dir}}/files/nginx.conf"
+    - name: reload nginx
+      service: 
+        name: openresty
+        state: restarted
+      
+  

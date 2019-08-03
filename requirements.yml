@@ -1,0 +1,7 @@
+---
+- geerlingguy.mysql
+- Lusitaniae.ansible-role-openresty
+- geerlingguy.php-versions
+- geerlingguy.php
+- geerlingguy.composer
+- geerlingguy.redis

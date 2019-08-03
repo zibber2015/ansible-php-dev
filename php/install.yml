@@ -1,0 +1,81 @@
+---
+- name: install php
+  hosts: 
+  - local
+  roles:
+    - geerlingguy.php-versions
+    - geerlingguy.php
+    - geerlingguy.composer
+  vars:
+    php_version: '7.3'
+    php_default_version_debian: '7.3'
+    php_enable_webserver: false
+    php_packages_extra:
+      - php-redis
+      - php-mysql
+      - php-pgsql
+      - php-tideways
+      - php-bcmath
+      - php-zip
+      - php-fpm
+      - php-common
+      - php-mcrypt
+      - php-xml
+    php_enable_php_fpm: true
+    #php_fpm_listen: "{{ ansible_eth0.ipv4.address }}:9000"
+    php_fpm_listen: "127.0.0.1:9000"
+    php_fpm_listen_allowed_clients: 
+    php_fpm_pm_max_children: 50
+    php_fpm_pm_start_servers: 5
+    php_fpm_pm_min_spare_servers: 5
+    php_fpm_pm_max_spare_servers: 5
+    php_enable_apc: false
+    # php_fpm_pool_user: "[apache|nginx|other]" # default varies by OS
+    # php_fpm_pool_group: "[apache|nginx|other]" # default varies by OS
+    php_memory_limit: "256M"
+    php_max_execution_time: "60"
+    php_max_input_time: "60"
+    php_max_input_vars: "1000"
+    php_realpath_cache_size: "32K"
+    php_file_uploads: "On"
+    php_upload_max_filesize: "64M"
+    php_max_file_uploads: "20"
+    php_post_max_size: "32M"
+    php_date_timezone: "Asia/Shanghai"
+    php_allow_url_fopen: "On"
+    php_output_buffering: "4096"
+    php_short_open_tag: false
+    php_error_reporting: "E_ALL & ~E_DEPRECATED & ~E_STRICT"
+    php_display_errors: "Off"
+    php_display_startup_errors: "On"
+    php_expose_php: "On"
+    php_session_cookie_lifetime: 0
+    php_session_gc_probability: 1
+    php_session_gc_divisor: 1000
+    php_session_gc_maxlifetime: 1440
+    php_session_save_handler: files
+    php_session_save_path: ''
+    php_disable_functions: []
+
+  tasks:
+    - name: copy  conf
+      copy: 
+        src: "{{ item }}"
+        dest: "/etc/php/7.3/fpm/pool.d/"
+      with_items:
+        - "{{playbook_dir}}/files/fpm/pool.d/www.conf"
+        
+
+    - name: reload php-fpm
+      service: 
+        name: php7.3-fpm
+        state: restarted
+    - name: init php log file
+      file:
+        path: /var/log/fpm-php.www.log
+        state: file
+        mode: 0777
+        owner: root
+        group: root
+    
+    
