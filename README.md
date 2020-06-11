@@ -1,5 +1,7 @@
 # 有些机器太烂跑不动docker,就需要ansible来安装
 
+# 如果需要别的可以去galaxy.ansible.com 自行添加
+
 # ansible-php-dev
 ansible-play 开发环境部署
 ```
