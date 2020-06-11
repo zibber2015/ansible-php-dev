@@ -5,7 +5,7 @@
   roles:
     - geerlingguy.php-versions
     - geerlingguy.php
-    - geerlingguy.composer
+    #- geerlingguy.composer
   vars:
     php_version: '7.3'
     php_default_version_debian: '7.3'
