@@ -73,7 +73,7 @@
     - name: init php log file
       file:
         path: /var/log/fpm-php.www.log
-        state: file
+        state: absent
         mode: 0777
         owner: root
         group: root
