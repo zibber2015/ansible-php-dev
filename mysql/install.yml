@@ -11,9 +11,9 @@
       - mysql-server
     mysql_user_home: /root
     mysql_user_name: root
-    mysql_root_password: 123456
-    mysql_root_password_update: yes
-    #第一次不要更改密码
+    #mysql_root_password: 123456
+    #mysql_root_password_update: yes
+    #第一次不要更改密码 第二次跑把注释打开
     mysql_enabled_on_startup: true
     encoding: utf8mb4
     collation: utf8mb4_unicode_ci
