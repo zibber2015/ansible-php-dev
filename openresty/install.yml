@@ -1,7 +1,7 @@
 ---
 - name: install openresty
   hosts: 
-    - local
+    - localhost
   roles:
     - Lusitaniae.ansible-role-openresty
   
