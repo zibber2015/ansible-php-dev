@@ -1,4 +1,4 @@
 [localhost]
 127.0.0.1
 [localhost:vars]
-ansible_connection=localhost
+ansible_connection=local
