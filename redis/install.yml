@@ -1,7 +1,7 @@
 ---
 - name: install redis
   hosts:
-    - local
+    - localhost
   roles:
     - role: geerlingguy.redis
   vars:
