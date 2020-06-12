@@ -12,6 +12,8 @@
           value: "root"
         - option: "JENKINS_GROUP"
           value: "root"
+      jenkins_repo_url: deb https://pkg.jenkins.io/debian-stable binary/
+      jenkins_repo_key_url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
       cache_updated: yes
 
     tasks:
