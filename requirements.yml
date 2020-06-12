@@ -5,5 +5,5 @@
 - geerlingguy.php
 - geerlingguy.composer
 - geerlingguy.redis
-# - geerlingguy.java
-# - geerlingguy.jenkins
+- geerlingguy.java
+- geerlingguy.jenkins
