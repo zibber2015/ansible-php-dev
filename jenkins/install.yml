@@ -12,6 +12,9 @@
           value: "root"
         - option: "JENKINS_GROUP"
           value: "root"
+      jenkins_repo_key_url:  https://pkg.jenkins.io/debian-stable/jenkins.io.key
+      jenkins_repo_url: https://pkg.jenkins.io/debian-stable binary
+
     tasks:
       - name: restart jenkins
         command: service jenkins restart
