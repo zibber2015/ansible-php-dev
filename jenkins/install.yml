@@ -4,8 +4,8 @@
   hosts: 
     - localhost
   roles:
-    - role: geerlingguy.java
-    - role: geerlingguy.jenkins
+    - geerlingguy.java
+    - geerlingguy.jenkins
   vars:
     jenkins_init_changes:
       - option: "JENKINS_USER"
