@@ -1,0 +1,21 @@
+---
+- name: install jenkins
+  become: true
+  become_user: root
+  hosts: 
+    - localhost
+  roles:
+    - role: geerlingguy.java
+    - role: geerlingguy.jenkins
+      become: yes
+  vars:
+    jenkins_init_changes:
+      - option: "JENKINS_USER"
+        value: "root"
+      - option: "JENKINS_GROUP"
+        value: "root"
+  tasks:
+  - name: restart jenkins
+    become: true
+    become_user: root
+    command: service jenkins restart
