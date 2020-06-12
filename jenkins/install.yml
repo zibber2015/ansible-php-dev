@@ -14,6 +14,7 @@
           value: "root"
       jenkins_repo_key_url:  https://pkg.jenkins.io/debian-stable/jenkins.io.key
       jenkins_repo_url: https://pkg.jenkins.io/debian-stable binary
+      cache_updated: yes
 
     tasks:
       - name: restart jenkins
