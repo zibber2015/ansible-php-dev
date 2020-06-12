@@ -1,13 +1,10 @@
 ---
 - name: install jenkins
-  become: true
-  become_user: root
   hosts: 
     - localhost
   roles:
     - role: geerlingguy.java
     - role: geerlingguy.jenkins
-      become: yes
   vars:
     jenkins_init_changes:
       - option: "JENKINS_USER"

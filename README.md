@@ -6,6 +6,7 @@
 
 ansible-play 开发环境部署
 ```
+   root 运行
    bash install-ansible.sh
    ansible-galaxy install -r requirements.yml
    ansible-playbook -i hosts  */install.yml
