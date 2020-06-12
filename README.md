@@ -3,7 +3,7 @@
 # 如果需要别的可以去 https://galaxy.ansible.com 添加
 
 # ansible-php-dev
-使用root执行
+
 ansible-play 开发环境部署
 ```
    bash install-ansible.sh
