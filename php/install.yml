@@ -1,5 +1,7 @@
 ---
 - name: install php
+  become: true
+  become_user: root
   hosts: 
   - localhost
   roles:
