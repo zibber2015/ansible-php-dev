@@ -20,5 +20,5 @@
     encoding: utf8mb4
     collation: utf8mb4_unicode_ci
   tasks:
-  - name: restart mysql
-    command: service mysql restart
+    - name: restart mysql
+      command: service mysql restart

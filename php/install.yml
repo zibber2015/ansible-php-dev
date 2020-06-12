@@ -67,7 +67,6 @@
       with_items:
         - "{{playbook_dir}}/files/fpm/pool.d/www.conf"
         
-
     - name: reload php-fpm
       service: 
         name: php7.3-fpm

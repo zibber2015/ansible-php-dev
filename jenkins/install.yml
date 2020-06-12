@@ -15,7 +15,5 @@
       - option: "JENKINS_GROUP"
         value: "root"
   tasks:
-  - name: restart jenkins
-    become: true
-    become_user: root
-    command: service jenkins restart
+    - name: restart jenkins
+      command: service jenkins restart
