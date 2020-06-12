@@ -1,5 +1,6 @@
 ---
 - name: install jenkins
+  become: true
   hosts: 
     - localhost
   roles:
