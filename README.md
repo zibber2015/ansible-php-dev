@@ -1,5 +1,3 @@
-# 有些机器太烂跑不动docker,就需要ansible来安装
-
 # 如果需要别的可以去 https://galaxy.ansible.com 添加
 
 # ansible-php-dev
